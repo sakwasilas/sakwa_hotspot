@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Package</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #08142b, #1f3b8f);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .buy-card{
+            background:white;
+            width:420px;
+            max-width:100%;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .buy-card h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#1d4ed8;
+        }
+
+        .package-box{
+            background:#eff6ff;
+            border:1px solid #bfdbfe;
+            padding:15px;
+            border-radius:12px;
+            margin-bottom:20px;
+            text-align:center;
+        }
+
+        .package-box h3{
+            color:#1e3a8a;
+            margin-bottom:8px;
+        }
+
+        .package-box p{
+            font-size:22px;
+            color:#16a34a;
+            font-weight:bold;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #d1d5db;
+            border-radius:10px;
+            margin-bottom:20px;
+            font-size:15px;
+        }
+
+        button{
+            width:100%;
+            padding:13px;
+            border:none;
+            background:#2563eb;
+            color:white;
+            font-size:16px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+
+        .back-link{
+            display:block;
+            text-align:center;
+            margin-top:15px;
+            text-decoration:none;
+            color:#2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="buy-card">
+        <h2>Buy WiFi Package</h2>
+
+        <div class="package-box">
+            <h3>{{ package_name }}</h3>
+            <p>KES {{ amount }}</p>
+        </div>
+
+        <form method="POST">
+            <label for="phone">M-Pesa Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="e.g. 0712345678" required>
+
+            <button type="submit">Buy Now</button>
+        </form>
+
+        <a href="/" class="back-link">Back to Packages</a>
+    </div>
+</body>
+</html>

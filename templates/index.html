@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WiFi Packages</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #0b1e3d, #1f3c88);
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .card {
+            background: #e6e6e6;
+            color: black;
+            display: inline-block;
+            width: 220px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background: #2d6cdf;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a4bb8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Select Your WiFi Package</h1>
+
+{% for package in packages %}
+    <div class="card">
+        <h2>{{ package.name }}</h2>
+        <h3>KES {{ package.price }}</h3>
+        <p>{{ package.description }}</p>
+
+        <a href="{{ url_for('buy', package_id=package.id) }}">
+            <button>Select Package</button>
+        </a>
+    </div>
+{% endfor %}
+
+</body>
+</html>

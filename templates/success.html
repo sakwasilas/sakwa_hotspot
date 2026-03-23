@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Sent</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #08142b, #1f3b8f);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .success-card{
+            background:white;
+            width:450px;
+            max-width:100%;
+            padding:35px 30px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.25);
+            text-align:center;
+        }
+
+        .success-card h2{
+            color:#16a34a;
+            margin-bottom:15px;
+        }
+
+        .success-card p{
+            margin-bottom:12px;
+            color:#374151;
+            font-size:16px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:15px;
+            text-decoration:none;
+            background:#2563eb;
+            color:white;
+            padding:12px 18px;
+            border-radius:10px;
+        }
+
+        .btn:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <h2>Request Received</h2>
+        <p><strong>Package:</strong> {{ package_name }}</p>
+        <p><strong>Amount:</strong> KES {{ amount }}</p>
+        <p><strong>Phone:</strong> {{ phone }}</p>
+        <p>Please complete payment on your phone.</p>
+
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
